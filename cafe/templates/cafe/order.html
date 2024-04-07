@@ -1,0 +1,15 @@
+<h1>장바구니</h1>
+<p>메뉴: {{ order.menu }}</p>
+{% if order.ice %}
+    <p>아이스: ice</p>
+{% else %}
+    <p>아이스: hot</p>
+{% endif %}
+<p>수량: {{ order.quantity }}</p>
+<p>가격: {{ order.price }}</p>
+
+<form method="post" action="{% url 'cafe:pay' order.id%}">
+    {% csrf_token %}
+    <input type="hidden" name="order_id" value="{{ order.id }}">
+    <button type="submit">결제하기</button>
+</form>

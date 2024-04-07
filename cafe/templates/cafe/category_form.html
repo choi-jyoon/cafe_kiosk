@@ -1,0 +1,16 @@
+<h1>create menu</h1>
+
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">메뉴 추가하기</button>
+</form>
+<!-- 뒤로 가기 버튼 -->
+<button onclick="goBack()">뒤로 가기</button>
+
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>

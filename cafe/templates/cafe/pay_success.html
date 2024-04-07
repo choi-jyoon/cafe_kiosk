@@ -1,0 +1,21 @@
+결제 완료
+
+<form method="get" action="{% url 'home' %}">
+    <button type="submit">홈</button>
+</form>
+
+<form method="get" action="{% url 'cafe:index' %}">
+    <button type="submit">추가 주문하기 </button>
+</form>
+
+<script>
+    function showPaymentSuccessMessage() {
+        var message = "결제가 성공적으로 완료되었습니다.";  
+        alert(message);  
+    }
+
+    window.onload = function() {
+        showPaymentSuccessMessage();
+    };
+</script>
+

@@ -1,0 +1,21 @@
+<h1>Category List</h1>
+
+<br>
+
+<ul>
+    {%for category in object_list%}
+    <li><a href='{% url 'cafe:detail' category.id %}'>{{category.name}}</a></li>
+    {%endfor%}
+</ul>
+<!-- 뒤로 가기 버튼 -->
+<button onclick="goBack()">뒤로 가기</button>
+
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
+
+<form method="get" action="{% url 'cafe:category_create' %}">
+    <button type="submit">카테고리 추가하기 </button>
+</form>

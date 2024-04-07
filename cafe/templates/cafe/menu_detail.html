@@ -1,0 +1,28 @@
+<h1>메뉴 소개</h1>
+
+<br>
+<div>
+    <h3>{{menu.name}}</h3>
+    가격 : {{menu.price}}
+    카테고리: {{menu.category.name}}
+</div>
+
+<form method="post" action="{% url 'cafe:order' menu.category.id menu.id%}">
+    {% csrf_token %}
+    수량: <input type="number" name="quantity" value="1" min="1">
+    <label for="ice">Hot / Ice:</label>
+    <select id="ice" name="ice">
+        <option value="True">Ice</option>
+        <option value="False">Hot</option>
+    </select>
+    <button type="submit">주문하기</button>
+</form>
+
+<!-- 뒤로 가기 버튼 -->
+<button onclick="goBack()">뒤로 가기</button>
+
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>

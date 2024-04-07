@@ -1,0 +1,21 @@
+<h1>Bookmark List</h1>
+
+<br>
+
+<ul>
+    {% for menu in object_list %}
+    <li><a href='{% url 'cafe:menudetail' menu.category.id menu.id %}'>{{ menu.name }}</a></li>
+    {% endfor %}
+</ul>
+<!-- 뒤로 가기 버튼 -->
+<button onclick="goBack()">뒤로 가기</button>
+
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
+
+<form method="get" action="{% url 'cafe:menu_create' %}">
+    <button type="submit">메뉴 추가하기 </button>
+</form>
