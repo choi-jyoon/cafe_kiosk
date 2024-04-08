@@ -1,4 +1,9 @@
-<h1>장바구니</h1>
+{% extends 'base.html' %}
+
+{% load static %}
+{% block title %}Order{% endblock %}
+{% block content %}
+
 <p>메뉴: {{ order.menu }}</p>
 {% if order.ice %}
     <p>아이스: ice</p>
@@ -13,3 +18,5 @@
     <input type="hidden" name="order_id" value="{{ order.id }}">
     <button type="submit">결제하기</button>
 </form>
+
+{% endblock content %}

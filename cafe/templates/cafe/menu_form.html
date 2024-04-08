@@ -1,4 +1,8 @@
-<h1>create menu</h1>
+{% extends 'base.html' %}
+
+{% load static %}
+{% block title %}Create Menu{% endblock %}
+{% block content %}
 
 
 <form method="post">
@@ -14,3 +18,5 @@
         window.history.back();
     }
 </script>
+
+{% endblock content %}
