@@ -22,5 +22,3 @@ class Order(models.Model):
     ice = models.BooleanField(verbose_name='ICE', default=True)
     pay = models.BooleanField(verbose_name='PAY', default=False)
     
-    
-    

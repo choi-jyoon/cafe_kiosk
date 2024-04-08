@@ -1,31 +1,35 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>카페 키오스크</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0r5Gnpev8ifCWFlS0qfA0jWVqP4I7jN02ObBqS8u8CcflnMoPnDhUHAelZzDKyi" crossorigin="anonymous">
-</head>
-<body>
-    <div class="container">
-        <h1>카페 키오스크</h1>
-        <div class="mt-3">
-            <form method="get" action="{% url 'cafe:index' %}">
-                <button type="submit">주문하기</button>
-            </form>
+{% extends 'base.html' %}
 
-            <form method="get" action="{% url 'cafe:manage' %}">
-                <button type="submit">메뉴 관리하기</button>
-            </form>
-
-            <form method="get" action="{% url 'admin:login' %}">
-                <button type="submit">관리자 페이지 이동</button>
-            </form>
-
-        </div>
+{% load static %}
+{% block title %}카페 키오스크{% endblock %}
+{% block extra-style %}
+<style type="text/css">
+    .home-image {
+        background-image: url("{% static 'img/cafe_img.png' %}");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+        height: 500px;
+        border-top: 10px solid #ccc;
+        border-bottom: 10px solid #ccc;
+        padding: 20px 0 0 20px;
+        opacity: 0.7;
+    }
+    .title {
+        color: #c80;
+        font-weight: bold;
+    }
+    .powered {
+        position: relative;
+        top: 77%;
+        color: #cc0;
+        font-style: italic;
+    }
+    </style>
+{% endblock %}
+{% block content %}
+    <div class = 'home-image'>
+        <h2 class = 'title'>Cafe</h2>
+        <h4 class = 'powered'><i class ='fas fa-arrow-circle-right'></i></h4>
     </div>
-    <!-- Bootstrap JS (optional) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-RVZY4jmnWuFWg9Bfu8ls66dX8LJLfZEbZr9o2w0eBuZaXqXlQU4E5Q2ElAvJv5Zl" crossorigin="anonymous"></script>
-</body>
-</html>
+{% endblock content %}

@@ -1,10 +1,23 @@
-<h1>Bookmark List</h1>
+{% extends 'base.html' %}
+
+{% load static %}
+{% block title %}Menu List{% endblock %}
+{% block content %}
 
 <br>
 
 <ul>
     {% for menu in object_list %}
-    <li><a href='{% url 'cafe:menudetail' menu.category.id menu.id %}'>{{ menu.name }}</a></li>
+    <li style="display: inline-block; margin-right: 10px;">
+    <div class="card" style="width: 18rem;">
+        <img src="{% static 'img/coffee.png' %}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{ menu.name }}</h5>
+          <p class="card-text">메뉴 설명 ~~ .</p>
+          <a href="{% url 'cafe:menudetail' menu.category.id menu.id %}" class="btn btn-primary">{{ menu.name }}</a>
+        </div>
+      </div>
+    </li>
     {% endfor %}
 </ul>
 <!-- 뒤로 가기 버튼 -->
@@ -19,3 +32,4 @@
 <form method="get" action="{% url 'cafe:menu_create' %}">
     <button type="submit">메뉴 추가하기 </button>
 </form>
+{% endblock content %}

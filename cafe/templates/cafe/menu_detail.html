@@ -1,4 +1,8 @@
-<h1>메뉴 소개</h1>
+{% extends 'base.html' %}
+
+{% load static %}
+{% block title %}Bookmark List{% endblock %}
+{% block content %}
 
 <br>
 <div>
@@ -26,3 +30,4 @@
         window.history.back();
     }
 </script>
+{% endblock content %}
