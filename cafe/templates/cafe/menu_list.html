@@ -21,7 +21,9 @@
     {% endfor %}
 </ul>
 <!-- 뒤로 가기 버튼 -->
-<button onclick="goBack()">뒤로 가기</button>
+<div class="mb-2"> 
+    <button onclick="goBack()" class="btn btn-secondary">뒤로 가기</button>
+</div>
 
 <script>
     function goBack() {
@@ -29,7 +31,9 @@
     }
 </script>
 
-<form method="get" action="{% url 'cafe:menu_create' %}">
-    <button type="submit">메뉴 추가하기 </button>
-</form>
+<div class='mb-2'>
+    <form method="get" action="{% url 'cafe:menu_create' %}">
+        <button type="submit" class="btn btn-secondary">메뉴 추가하기 </button>
+    </form>
+</div>
 {% endblock content %}

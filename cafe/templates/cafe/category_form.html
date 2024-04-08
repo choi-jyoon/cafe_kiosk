@@ -7,17 +7,16 @@
 
 <form method="post">
     {% csrf_token %}
-    <div class="mb-3">
-        <label for="id_category_name" class="form-label">Category Name</label>
-        <input type="text" class="form-control category-name" id="id_category_name" name="category_name" placeholder="Enter category name">
-    </div>
+    
     {% for field in form %}
-    <p class="form-field">{{ field.label_tag }} {{ field }}</p>
+    {{form.as_p}}
     {% endfor %}
-    <button type="submit" class="btn btn-secondary">완료</button>
+    <div class='mb-2'>
+        <button type="submit" class="btn btn-primary">완료</button>
+    </div>
 </form>
 <!-- 뒤로 가기 버튼 -->
-<button onclick="goBack()">뒤로 가기</button>
+<button onclick="goBack()" class="btn btn-secondary">뒤로 가기</button>
 
 <script>
     function goBack() {

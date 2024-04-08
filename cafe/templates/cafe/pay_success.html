@@ -4,13 +4,16 @@
 {% block title %}결제 완료{% endblock %}
 {% block content %}
 
-<form method="get" action="{% url 'home' %}">
-    <button type="submit">홈</button>
-</form>
-
-<form method="get" action="{% url 'cafe:index' %}">
-    <button type="submit">추가 주문하기 </button>
-</form>
+<div class='mb-2'>
+    <form method="get" action="{% url 'home' %}">
+        <button type="submit" class='btn btn-primary'>홈</button>
+    </form>
+</div>
+<div class='mb-2'>
+    <form method="get" action="{% url 'cafe:index' %}">
+        <button type="submit" class="btn btn-primary">추가 주문하기 </button>
+    </form>
+</div>
 
 <script>
     function showPaymentSuccessMessage() {
